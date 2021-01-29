@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MALScraping", "MALScraping\MALScraping.csproj", "{36E75708-95B1-4CE5-B991-04DE7085978E}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36E75708-95B1-4CE5-B991-04DE7085978E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E75708-95B1-4CE5-B991-04DE7085978E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E75708-95B1-4CE5-B991-04DE7085978E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E75708-95B1-4CE5-B991-04DE7085978E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
