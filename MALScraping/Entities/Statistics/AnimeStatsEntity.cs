@@ -4,7 +4,7 @@
     {
         public AnimeStatsEntity(string userName, double days, double meanScore, int watching, int completed, int onHold, int dropped, int planToWatch, int totalEntries, int rewatched, int episodes)
         {
-            URL = $"https://myanimelist.net/animelist/t{userName}?status=7";
+            URL = $"https://myanimelist.net/animelist/{userName}?status=7";
 
             Days = days;
             MeanScore = meanScore;
