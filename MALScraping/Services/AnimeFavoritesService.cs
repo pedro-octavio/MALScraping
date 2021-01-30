@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MALScraping.Services
 {
-    public static class UserFavorites
+    public static class AnimeFavoritesService
     {
         public static IEnumerable<AnimeFavoritesEntity> LoadAnimes(string userName)
         {
