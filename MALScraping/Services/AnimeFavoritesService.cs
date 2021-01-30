@@ -8,7 +8,7 @@ namespace MALScraping.Services
 {
     public static class AnimeFavoritesService
     {
-        public static IEnumerable<AnimeFavoritesEntity> LoadAnimes(string userName)
+        public static IEnumerable<AnimeFavoritesEntity> Load(string userName)
         {
             var nodeCollection = AdaptNodeCollection(WebClientService.GetNodeCollection(userName))[1].ChildNodes[3].ChildNodes;
 
