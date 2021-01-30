@@ -1,4 +1,5 @@
 ﻿using HtmlAgilityPack;
+using System;
 using System.Net;
 
 namespace MALScraping.Shared
@@ -7,15 +8,22 @@ namespace MALScraping.Shared
     {
         internal static HtmlNodeCollection GetNodeCollection(string userName)
         {
-            var webClient = new WebClient();
+            try
+            {
+                var webClient = new WebClient();
 
-            var webPage = webClient.DownloadString($"https://myanimelist.net/profile/{userName}");
+                var webPage = webClient.DownloadString($"https://myanimelist.net/profile/{userName}");
 
-            var htmlDocument = new HtmlDocument();
+                var htmlDocument = new HtmlDocument();
 
-            htmlDocument.LoadHtml(webPage);
+                htmlDocument.LoadHtml(webPage);
 
-            return htmlDocument.GetElementbyId("content").ChildNodes[1].ChildNodes[3].ChildNodes;
+                return htmlDocument.GetElementbyId("content").ChildNodes[1].ChildNodes[3].ChildNodes;
+            }
+            catch (WebException ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
