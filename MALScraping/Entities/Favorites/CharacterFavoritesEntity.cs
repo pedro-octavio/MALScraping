@@ -2,19 +2,17 @@
 {
     public class CharacterFavoritesEntity
     {
-        public CharacterFavoritesEntity(string name, string midia, int year, string url, string image)
+        public CharacterFavoritesEntity(string name, string uRL, string workURL, string image)
         {
             Name = name;
-            Midia = midia;
-            Year = year;
-            URL = url;
+            URL = uRL;
+            WorkURL = workURL;
             Image = image;
         }
 
         public string Name { get; private set; }
-        public string Midia { get; private set; }
-        public int Year { get; private set; }
         public string URL { get; private set; }
+        public string WorkURL { get; private set; }
         public string Image { get; private set; }
     }
 }
