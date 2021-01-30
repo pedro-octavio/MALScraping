@@ -1,8 +1,8 @@
 ﻿namespace MALScraping.Entities.Favorites
 {
-    public class CharactersFavoritesEntity
+    public class CharacterFavoritesEntity
     {
-        public CharactersFavoritesEntity(string name, string midia, int year, string url, string image)
+        public CharacterFavoritesEntity(string name, string midia, int year, string url, string image)
         {
             Name = name;
             Midia = midia;
