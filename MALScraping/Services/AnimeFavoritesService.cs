@@ -1,8 +1,8 @@
-﻿using HtmlAgilityPack;
-using MALScraping.Entities.Favorites;
+﻿using MALScraping.Entities.Favorites;
 using MALScraping.Shared;
 using System;
 using System.Collections.Generic;
+using MALScraping.Helpers;
 
 namespace MALScraping.Services
 {
@@ -10,7 +10,7 @@ namespace MALScraping.Services
     {
         public static IEnumerable<AnimeFavoritesEntity> Load(string userName)
         {
-            var nodeCollection = AdaptNodeCollection(WebClientService.GetNodeCollection(userName))[1].ChildNodes[3].ChildNodes;
+            var nodeCollection = NodeCollectionHelper.AdaptFavorites(WebClientService.GetNodeCollection(userName))[1].ChildNodes[3].ChildNodes;
 
             var animeFavorites = new List<AnimeFavoritesEntity>();
 
@@ -27,12 +27,6 @@ namespace MALScraping.Services
             }
 
             return animeFavorites;
-        }
-
-        private static HtmlNodeCollection AdaptNodeCollection(HtmlNodeCollection nodeCollection)
-        {
-            if (nodeCollection.Count == 9) return nodeCollection[5].ChildNodes[1].ChildNodes;
-            else return nodeCollection[7].ChildNodes[1].ChildNodes;
         }
     }
 }
