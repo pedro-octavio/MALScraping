@@ -1,5 +1,5 @@
-﻿using HtmlAgilityPack;
-using MALScraping.Entities.Statistics;
+﻿using MALScraping.Entities.Statistics;
+using MALScraping.Helpers;
 using MALScraping.Shared;
 using System;
 
@@ -9,7 +9,7 @@ namespace MALScraping.Services
     {
         public static AnimeStatsEntity Load(string userName)
         {
-            var nodeCollection = AdaptNodeCollection(WebClientService.GetNodeCollection(userName));
+            var nodeCollection = NodeCollectionHelper.AdaptAnimeStats(WebClientService.GetNodeCollection(userName));
 
             return new AnimeStatsEntity(
                 userName,
@@ -23,12 +23,6 @@ namespace MALScraping.Services
                 Convert.ToInt32(nodeCollection[7].ChildNodes[2].ChildNodes[0].ChildNodes[1].InnerText.Replace(",", "")),
                 Convert.ToInt32(nodeCollection[7].ChildNodes[2].ChildNodes[1].ChildNodes[1].InnerText.Replace(",", "")),
                 Convert.ToInt32(nodeCollection[7].ChildNodes[2].ChildNodes[2].ChildNodes[1].InnerText.Replace(",", "")));
-        }
-
-        private static HtmlNodeCollection AdaptNodeCollection(HtmlNodeCollection nodeCollection)
-        {
-            if (nodeCollection.Count == 9) return nodeCollection[1].ChildNodes[3].ChildNodes[1].ChildNodes;
-            else return nodeCollection[3].ChildNodes[3].ChildNodes[1].ChildNodes;
         }
     }
 }
