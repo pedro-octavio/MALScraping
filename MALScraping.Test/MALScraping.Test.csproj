@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tests\Favorites\" />
+    <ProjectReference Include="..\MALScraping\MALScraping.csproj" />
   </ItemGroup>
 
 </Project>
