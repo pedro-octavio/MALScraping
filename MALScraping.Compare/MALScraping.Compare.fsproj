@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Models\MangaStatsCompareModel.fs" />
+    <Compile Include="Models\AnimeStatsCompareModel.fs" />
+    <Compile Include="Services\MangaStatsCompareService.fs" />
+    <Compile Include="Services\AnimeStatsCompareService.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MALScraping\MALScraping.csproj" />
+  </ItemGroup>
+
+</Project>
